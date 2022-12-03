@@ -1,6 +1,7 @@
-import Header from './Header';
+
 import Skills from './Skills';
 import './App.css';
+import Header from './Header';
 
 const App = () => {
   return (
