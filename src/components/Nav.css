@@ -1,0 +1,18 @@
+.nav-bar {
+    grid-area: n;
+
+
+    border: 3px solid salmon;
+    background-color: azure;
+}
+
+a {
+    text-decoration: none;
+    color: palevioletred;
+}
+
+.nav-bar {
+    padding: 20px;
+    
+    line-height: 2rem;
+}

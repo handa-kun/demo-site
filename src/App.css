@@ -14,27 +14,3 @@
 
   color: rgb(5, 19, 48);
 }
-
-img {
-  width: 200px;
-  height: auto; 
-}
-
-.header{
- grid-area: h;
-
- border: 3px solid salmon;
-}
-
-.nav-bar {
-  grid-area: n;
-
-  border: 3px solid salmon;
-  background-color: azure;
-}
-
-.content {
- grid-area: c;
-
- border: 3px solid salmon;
-}
