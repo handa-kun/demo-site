@@ -1,15 +1,16 @@
-
-import Skills from './Skills';
 import './App.css';
-import Header from './Header';
+import Profile from './components/Profile';
+import Header from './components/Header';
+import Nav from './components/Nav';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className='app-wrapper'>
       <Header />
-      <Skills />
+      <Nav />
+      <Profile />
     </div>
-  
+
   );
 }
 
