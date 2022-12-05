@@ -1,0 +1,10 @@
+
+.posts {
+  line-height: 2rem;
+  padding: 2rem;
+
+  color: goldenrod;
+  font-size: 20px;
+
+  border: 2px solid sandybrown;
+}
