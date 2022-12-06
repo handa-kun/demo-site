@@ -1,16 +1,14 @@
 
-
-
 .item {
   font-size: 30px;
   
   color: aqua;
-  border: 2px solid sandybrown;
+  border: 3px solid sandybrown;
 
   margin: 5vh;
 }
 
 .item img {
+  font-size: 20px;
   width: 50px;
-  height: auto;
 }

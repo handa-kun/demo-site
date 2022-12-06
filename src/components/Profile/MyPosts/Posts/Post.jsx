@@ -3,11 +3,12 @@ import classes from './Post.module.css'
 const Post = ( props ) => {
     return (
             <div className={classes.item}>
-              <img src='https://www.pngarts.com/files/11/Avatar-PNG-Free-Download.png' />
-              <span>{ props.message }</span> 
+              <img //src='https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg' 
+              alt="logo" />
+              <span>{ props.message }</span>
               <div>
                 <button>
-                  Like
+                  Like {props.counter}
                 </button>
               </div>
             </div>

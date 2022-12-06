@@ -1,25 +1,26 @@
+import { NavLink } from 'react-router-dom';
 import './Nav.css'
 
 const Nav = () => {
     return (
         <nav className='nav-bar'>
         <div>
-          <a href='#'>Home</a>
+          <NavLink to='/profile'>Profile</NavLink>
         </div>
         <div>
-          <a href='#'>Friends</a>
+          <NavLink to='/dialogs'>Messages</NavLink>
         </div>
         <div>
-          <a href='#'>Messages</a>
+          <NavLink to='/friends'>Friends</NavLink>
         </div>
         <div>
-          <a href='#'>News</a>
+          <NavLink to='/news'>News</NavLink>
         </div>
         <div>
-          <a href='#'>Music</a>
+          <NavLink to='/music'>Music</NavLink>
         </div>
         <div>
-          <a href='#'>Settings</a>
+          <NavLink to='/settings'>Settings</NavLink>
         </div>
       </nav>
     )

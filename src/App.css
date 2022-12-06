@@ -3,14 +3,22 @@
   width: 1200px;
 
   margin: 0 auto;
-  
+
   grid-template-rows: 120px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 
-  grid-template-areas: 
-  'h h'
-  'n c';
+  grid-template-areas:
+    'h h'
+    'n c';
 
   color: rgb(5, 19, 48);
+}
+
+.app-wrapper-content {
+  grid-area: c;
+
+  border: 3px solid salmon;
+  background-color: azure;
+
 }

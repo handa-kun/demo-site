@@ -4,6 +4,9 @@
 
     border: 3px solid salmon;
     background-color: azure;
+
+    padding: 20px;
+    line-height: 2rem;
 }
 
 a {
@@ -11,8 +14,6 @@ a {
     color: palevioletred;
 }
 
-.nav-bar {
-    padding: 20px;
-    
-    line-height: 2rem;
+a.active {
+    color: gold;
 }
