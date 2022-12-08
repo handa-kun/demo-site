@@ -23,8 +23,15 @@ let state = {
             { id: 4, text: 'I cannot belive!' },
             { id: 5, text: 'Cooool!' }
         ]
-    }
+    },
 
+    navBar: {
+        friends: [
+            { name: 'Alex' },
+            { name: 'Liza' },
+            { name: 'Leha' }
+        ]
+    },
 };
 
 export default state;

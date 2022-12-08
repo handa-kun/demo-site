@@ -18,12 +18,13 @@ a.active {
     color: gold;
 }
 
-.img_friends {
+.online {
     display: flex;
-    justify-content: space-around;
+    
+    text-align: center;
+    gap: 15px;
 }
 
-.img_friends img {
-    width: 30px;
-    border-radius: 5rem;
+.online img {
+    width: 5rem;
 }
