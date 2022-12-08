@@ -14,9 +14,14 @@
 .item {
     padding: 2rem;
     margin: 10px;
+    height: 10px;
+
     border: 2px solid rgb(161, 55, 161);
+    border-radius: 5rem;
 }
 
 .messages {
     padding: 10px;
+    width: 50%;
 }
+
