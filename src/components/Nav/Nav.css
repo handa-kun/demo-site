@@ -17,3 +17,13 @@ a {
 a.active {
     color: gold;
 }
+
+.img_friends {
+    display: flex;
+    justify-content: space-around;
+}
+
+.img_friends img {
+    width: 30px;
+    border-radius: 5rem;
+}
