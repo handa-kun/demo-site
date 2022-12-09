@@ -3,6 +3,8 @@ let state = {
         posts: [
             { id: 0, text: 'Hi, what`s going on?', counter: '4' },
             { id: 1, text: 'Very nice, dude!', counter: '10' },
+            { id: 1, text: 'Booooo', counter: '5' },
+            { id: 1, text: 'Try again, dude', counter: '3' },
         ]
     },
 
@@ -33,5 +35,16 @@ let state = {
         ]
     },
 };
+
+export let addNewPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        text: postMessage,
+        counter: 0
+    };
+
+    state.profilePage.posts.push(newPost);
+}; 
+
 
 export default state;
