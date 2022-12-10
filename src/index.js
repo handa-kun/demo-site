@@ -1,19 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import state from './Redux/state';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state from './Redux/state'
-import { addNewPost } from './Redux/state';
+import { rerenderEntireTree } from './render';
 
+rerenderEntireTree(state);
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App state={state} addNewPost={addNewPost} />
-  </React.StrictMode>
-);
 
 
 
