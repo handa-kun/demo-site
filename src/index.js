@@ -3,11 +3,9 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { rerenderEntireTree } from './render';
 
+
+
 rerenderEntireTree(state);
-
-
-
-
 
 
 
