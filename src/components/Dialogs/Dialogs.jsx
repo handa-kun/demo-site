@@ -8,11 +8,16 @@ const Dialogs = (props) => {
     let dialogsElements = props.state.dialogs.map( d => <Item name={d.name} id={d.id}/> );
     let messagesElements = props.state.messages.map( m => <Message text={m.text}/> );
 
-    let newMessage = React.createRef();
+    let newMessageElement = React.createRef();
 
     let sendMessage = () => {
-        let message = newMessage.current.value;
-        alert(message);
+        props.dispatch({ type: 'SEND-NEW-MESSAGE' });
+    } 
+
+    let onMessageChange = () => {
+        let message = newMessageElement.current.value;
+        let action = {type: 'UPDATE-NEW-MESSAGE-TEXT', newMessage: message};
+        props.dispatch(action);
     }
 
     return (
@@ -24,7 +29,8 @@ const Dialogs = (props) => {
                {messagesElements}   
             </div>
             <div>
-                <textarea ref={newMessage}></textarea>
+                <textarea ref={newMessageElement}
+                onChange={onMessageChange}></textarea>
                 <button onClick={sendMessage}>Send</button>
             </div>
         </div>

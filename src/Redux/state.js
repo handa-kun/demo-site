@@ -26,7 +26,8 @@ let store = {
                 { id: 3, text: 'Thanks' },
                 { id: 4, text: 'I cannot belive!' },
                 { id: 5, text: 'Cooool!' }
-            ]
+            ],
+            newMessageText: ''
         },
     
         navBar: {
@@ -43,21 +44,6 @@ let store = {
     _callSubscriber() {
         console.log('State is changed');
     },
-/*     addNewPost(){
-        let newPost = {
-            id: 5,
-            text: this._state.profilePage.newPostText,
-            counter: 0
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    
-    }, */
-   /*  updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    }, */
     subscribe(observer) {
         this._callSubscriber = observer;
     },
@@ -73,6 +59,16 @@ let store = {
             this._callSubscriber(this._state);
         } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
             this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        } else if (action.type === 'SEND-NEW-MESSAGE') {
+            let newMessage = {
+                id:6,
+                text: this._state.dialogsPage.newMessageText}
+            this._state.dialogsPage.messages.push(newMessage);
+            this._state.dialogsPage.newMessageText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+            this._state.dialogsPage.newMessageText = action.newMessage;
             this._callSubscriber(this._state);
         }
     }
