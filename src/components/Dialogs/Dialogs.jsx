@@ -14,18 +14,18 @@ const Dialogs = (props) => {
     let messagesElements = state.messages.map(m => <Message text={m.text} />);
     let newMessageText = state.newMessageText;
 
-    let newMessage = React.createRef();
+
+    let newMessageElement = React.createRef();
     
     let sendMessage = () => {
         props.store.dispatch(sendMesageActionCreator());
     };
 
-    let onMessage = (e) => {
+    let onMessageChange = (e) => {
         let message = e.target.value;
         let action = updateNewMessageActionCreator(message);
         props.store.dispatch(action);
     };
-
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialog}>
@@ -39,9 +39,9 @@ const Dialogs = (props) => {
                     <img src="" alt="logo" />
                 </div>
                 <div className={classes.message}>
-                    <textarea ref={newMessage} 
+                    <textarea ref={newMessageElement} 
                     value={newMessageText}
-                    onChange={onMessage}></textarea>
+                    onChange={onMessageChange}></textarea>
                     <button onClick={sendMessage}>Send</button>
                 </div>
             </div>
