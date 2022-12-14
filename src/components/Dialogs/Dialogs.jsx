@@ -2,7 +2,7 @@ import classes from './Dialogs.module.css'
 import Item from './Item/Item';
 import Message from './Message/Message';
 import React from 'react';
-import { sendMesageActionCreator, updateNewMessageActionCreator } from '../../Redux/state';
+import { sendMesageActionCreator, updateNewMessageActionCreator } from '../../Redux/dialogsReducer';
 
 
 
@@ -16,7 +16,7 @@ const Dialogs = (props) => {
 
 
     let newMessageElement = React.createRef();
-    
+
     let sendMessage = () => {
         props.store.dispatch(sendMesageActionCreator());
     };
@@ -39,9 +39,9 @@ const Dialogs = (props) => {
                     <img src="" alt="logo" />
                 </div>
                 <div className={classes.message}>
-                    <textarea ref={newMessageElement} 
-                    value={newMessageText}
-                    onChange={onMessageChange}></textarea>
+                    <textarea ref={newMessageElement}
+                        value={newMessageText}
+                        onChange={onMessageChange}></textarea>
                     <button onClick={sendMessage}>Send</button>
                 </div>
             </div>
