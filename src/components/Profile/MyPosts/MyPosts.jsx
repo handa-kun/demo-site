@@ -13,7 +13,7 @@ const MyPosts = (props) => {
   };
   let onPostChange = (e) => {
     let text = e.target.value;
-    props.updateNewPost(text);
+    props.onPostChange(text);
   };
   return (
     <div className={styles.posts}>
