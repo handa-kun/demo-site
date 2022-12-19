@@ -2,9 +2,9 @@ import { NavLink } from 'react-router-dom';
 import './Nav.css'
 import NavFriends from './NavFriends';
 
-const Nav = (props) => {
+const Nav = (store) => {
 
-  let friendsElements = props.state.friends.map(f => <NavFriends name={f.name} />);
+  //let friendsElements = state.friends.map(f => <NavFriends name={f.name} />);
 
   return (
     <nav className='nav-bar'>
@@ -27,11 +27,14 @@ const Nav = (props) => {
         <NavLink to='/settings'>Settings</NavLink>
       </div>
       <div>
+        <NavLink to='/users'>Users</NavLink>
+      </div>
+      <div>
         <NavLink to='/friends'>
           <h3>Friends</h3>
         </NavLink>
         <div className='online'>
-        {friendsElements}
+        {/* {friendsElements} */}
         </div>
       </div>
     </nav>

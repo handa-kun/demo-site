@@ -18,7 +18,6 @@ const Dialogs = (props) => {
         let message = e.target.value;
         props.onMessageChange(message);
     };
-    console.log(props.newMessageText);
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialog}>
