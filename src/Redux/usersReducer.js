@@ -4,26 +4,10 @@ const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 
 let initialState = {
-    users: [
-       /*  {   id: 1, 
-            followed: true, 
-            fullName: 'Alex', 
-            status: 'I am in love', 
-            location: {city: 'Saint-Petersburg', country: 'Russia'}
-        },
-        {   id: 2, 
-            followed: true, 
-            fullName: 'Liza', 
-            status: 'I am in love too', 
-            location: {city: 'Saint-Petersburg', country: 'Russia'}
-        },
-        {   id: 3, 
-            followed: false, 
-            fullName: 'Leha', 
-            status: 'I live in another city', 
-            location: {city: 'Astana', country: 'Kazakhstan'}
-        }, */
-    ]
+    users: [ ],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 1
 };
 
 
