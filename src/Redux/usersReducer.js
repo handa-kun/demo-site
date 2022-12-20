@@ -5,7 +5,7 @@ const UNFOLLOW = 'UNFOLLOW';
 
 let initialState = {
     users: [
-        {   id: 1, 
+       /*  {   id: 1, 
             followed: true, 
             fullName: 'Alex', 
             status: 'I am in love', 
@@ -22,7 +22,7 @@ let initialState = {
             fullName: 'Leha', 
             status: 'I live in another city', 
             location: {city: 'Astana', country: 'Kazakhstan'}
-        },
+        }, */
     ]
 };
 
