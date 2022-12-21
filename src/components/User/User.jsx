@@ -1,11 +1,21 @@
 import React from "react";
 import axios from "axios";
 import classes from '../User/User.module.css'
+import User from '../../images/user.png'
 
 class Users extends React.Component {
 
     componentDidMount() {
-        axios.get('https://social-network.samuraijs.com/api/1.0/users?page=')
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setUsers(response.data.items);
+                this.props.setTotalCount(response.data.totalCount);
+            });
+    }
+
+    onPageChanged = (pageNumber) => {
+        this.props.setCurrentPage(pageNumber);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
             .then(response => {
                 this.props.set_users(response.data.items);
             });
@@ -13,19 +23,25 @@ class Users extends React.Component {
 
     render() {
 
-        let pagesCount = this.props.totalUsersCount / this.props.pageSize;
+        let pagesCount = Math.ceil((this.props.totalUsersCount / this.props.pageSize) / 500);
 
         let pages = [];
-        for (let i=1; i <= pagesCount; i++) {
+        for (let i = 1; i <= pagesCount; i++) {
             pages.push(i)
         }
 
         return <div className={classes.main}>
+            <div>
+                {pages.map(p => {
+                    return <span className={this.props.currentPage === p && classes.page}
+                        onClick={() => { this.onPageChanged(p) }}>{p}</span>
+                })}
+            </div>
             {
                 this.props.users.map(u => <div key={u.id}>
                     <span>
                         <div>
-                            <img src={'https://writers.com/wp-content/uploads/2022/06/icon-poetry.png'} className={classes.img} alt='logo' />
+                            <img src={u.photos.small != null ? u.photos.small : User} className={classes.img} alt='logo' />
                         </div>
                         <span>
                             <div>{u.name}</div>
@@ -38,7 +54,7 @@ class Users extends React.Component {
                         </div>
                     </span>
                     <span>
-                      {/*   <span>
+                        {/*   <span>
                             <div>{u.location.city}</div>
                             <div>{u.location.country}</div>
                         </span> */}
