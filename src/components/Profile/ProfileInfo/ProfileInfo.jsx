@@ -5,7 +5,7 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader />
     }
-    debugger;
+    
     return (
         <div>
             <div className={styles.header_content}>
@@ -13,7 +13,15 @@ const ProfileInfo = (props) => {
             </div>
             <div>
                 <img src={props.profile.photos.large} alt="logo" />
-                ava+dis
+                <div>
+                    <span>{props.profile.fullName}</span>
+                </div>
+                <div>
+                    <span>{props.profile.aboutMe}</span>
+                </div>
+                <div>
+                    <span>{props.profile.lookingForAJobDescription}</span>
+                </div>
             </div>
         </div>
     )
