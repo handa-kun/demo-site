@@ -16,7 +16,6 @@ export function withRouter(Children){
 class ProfileContainer extends React.Component {
 
     componentDidMount() {
-        debugger;
         let userId = this.props.match.params.userId;
         if (!userId) {
             userId = 2;
