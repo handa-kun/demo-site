@@ -10,5 +10,10 @@
     background-color: azure;
 }
 
+.login_block {
+    display: flex;
+    justify-content: flex-end;
+}
+
 
 
