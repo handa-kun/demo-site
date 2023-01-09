@@ -1,29 +1,19 @@
 import { connect } from "react-redux";
-import { follow, toggleFollowingProgress, setCurrentPage, setTotalUsersCount, setUsers, toggleIsFetching, unfollow } from "../../Redux/usersReducer";
+import { follow, toggleFollowingProgress, setCurrentPage, unfollow, getUsers, } from "../../Redux/usersReducer";
 import Users from "./Users";
 import React from "react";
 import Preloader from "../common/Preloader";
-import { usersAPI } from "../../api/api";
 
 
 class UsersAPI extends React.Component {
 
     componentDidMount() {
-        this.props.toggleIsFetching(true)
-        usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
-            this.props.toggleIsFetching(false);
-            this.props.setUsers(data.items);
-            this.props.setTotalUsersCount(data.totalCount);
-        });        
+        this.props.getUsers(this.props.currentPage, this.props.pageSize);    
     }
 
     onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
-        this.props.toggleIsFetching(true);
-        usersAPI.getUsers(pageNumber, this.props.pageSize).then(data => {
-            this.props.toggleIsFetching(false);
-            this.props.setUsers(data.items);
-        });
+        this.props.getUsers(pageNumber, this.props.pageSize);
     }
             
     render() {
@@ -36,7 +26,6 @@ class UsersAPI extends React.Component {
                 users={this.props.users}
                 follow={this.props.follow}
                 unfollow={this.props.unfollow}
-                toggleFollowingProgress={this.props.toggleFollowingProgress}
                 followingProgress={this.props.followingProgress}
         />}
     </>
@@ -77,6 +66,6 @@ let mapDispatchToProps = (dispatch) => {
     }
 } */
  
-const UserContainer =  connect(mapStateToProps, { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching, toggleFollowingProgress })(UsersAPI);
+const UserContainer =  connect(mapStateToProps, { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers})(UsersAPI);
 
 export default UserContainer;
