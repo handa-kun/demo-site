@@ -45,9 +45,9 @@ export const addPostActionCreator = () => ({type: ADD_NEW_POST})
 export const updateNewPostActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
 export const setUsersProfile = (profile) => ({type: SET_USERS_PROFILE, profile });
 
-export const setProfile = (userId) => {
+export const getProfile = (userId) => {
     return (dispatch) => {
-        usersAPI.profile(userId).then(response => {
+        usersAPI.getProfile(userId).then(response => {
             dispatch(setUsersProfile(response.data));
         });
     }
