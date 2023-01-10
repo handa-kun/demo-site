@@ -65,7 +65,7 @@ let mapDispatchToProps = (dispatch) => {
         }
     }
 } */
- 
+
 const UserContainer =  connect(mapStateToProps, { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers})(UsersAPI);
 
 export default UserContainer;
