@@ -1,5 +1,6 @@
 import Preloader from '../../common/Preloader';
 import styles from './ProfileInfo.module.css'
+import ProfileStatus from '../ProfileStatus/ProfileStatus'
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -22,6 +23,7 @@ const ProfileInfo = (props) => {
                 <div>
                     <span>{props.profile.lookingForAJobDescription}</span>
                 </div>
+                <ProfileStatus status='Hello'/>
             </div>
         </div>
     )

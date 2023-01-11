@@ -4,6 +4,11 @@ import { getProfile } from "../../Redux/profileReducer";
 import { connect } from "react-redux";
 import { withAuthNavigate } from "../../hoc/withAuthNavigate";
 import { withRouter } from "../../hoc/withRouter";
+import { compose } from "redux";
+
+let mapStateToProps = (state) => ({
+    profile: state.profilePage.profile,
+});
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
@@ -21,12 +26,8 @@ class ProfileContainer extends React.Component {
     }
 };
 
-let AuthNavigateComponent = withAuthNavigate(ProfileContainer);
-
-let mapStateToProps = (state) => ({
-    profile: state.profilePage.profile,
-});
-
-let WithUrl = withRouter(AuthNavigateComponent);
-
-export default connect(mapStateToProps, { getProfile }) (WithUrl);
+export default compose(
+    connect(mapStateToProps, { getProfile }),
+    withRouter,
+    withAuthNavigate
+)(ProfileContainer)
