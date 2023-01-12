@@ -6,11 +6,11 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader />
     }
-    
+
     return (
         <div>
             <div className={styles.header_content}>
-                <img src='https://www.freepnglogos.com/uploads/book-png/library-archive-books-png-transparent-14.png' alt='logo'/>
+                <img src='https://www.freepnglogos.com/uploads/book-png/library-archive-books-png-transparent-14.png' alt='logo' />
             </div>
             <div>
                 <img src={props.profile.photos.large} alt="logo" />
@@ -23,7 +23,7 @@ const ProfileInfo = (props) => {
                 <div>
                     <span>{props.profile.lookingForAJobDescription}</span>
                 </div>
-                <ProfileStatus status='Hello'/>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
             </div>
         </div>
     )
