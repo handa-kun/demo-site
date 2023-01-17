@@ -11,7 +11,7 @@ let intialState = {
 };
 
 const authReducer = (state = intialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case SET_USER_DATA:
             return {
                 ...state,
@@ -23,17 +23,27 @@ const authReducer = (state = intialState, action) => {
     }
 };
 
-export const setUserData = (id, email, login) => ({type: SET_USER_DATA, data: {id, email, login}});
+export const setUserData = (id, email, login) => ({ type: SET_USER_DATA, data: { id, email, login } });
 
 export const authMe = () => {
     return (dispatch) => {
         authAPI.authMe().then(response => {
             if (response.data.resultCode === 0) {
-                let {id, email, login} = response.data.data;
+                let { id, email, login } = response.data.data;
                 dispatch(setUserData(id, email, login));
             }
         });
     }
-} 
+}
+
+export const loginMe = () => {
+    return (dispatch) => {
+        authAPI.loginMe().then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(setUserData(response.data))
+            }
+        });
+    }
+}
 
 export default authReducer;

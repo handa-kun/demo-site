@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import './Nav.css'
-import NavFriends from './NavFriends';
+//import NavFriends from './NavFriends';
 
 const Nav = (store) => {
 
@@ -34,7 +34,7 @@ const Nav = (store) => {
           <h3>Friends</h3>
         </NavLink>
         <div className='online'>
-        {/* {friendsElements} */}
+          {/* {friendsElements} */}
         </div>
       </div>
     </nav>
