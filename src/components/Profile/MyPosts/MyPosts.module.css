@@ -1,4 +1,3 @@
-
 .posts {
   line-height: 2rem;
   padding: 2rem;
@@ -8,4 +7,9 @@
 
   border: 2px solid sandybrown;
 
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
 }
