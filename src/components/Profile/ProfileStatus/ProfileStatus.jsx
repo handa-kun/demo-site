@@ -47,12 +47,15 @@ class ProfileStatus extends React.Component {
                             value={this.state.status}
                             onChange={this.onStatusChange} />
                     </div>}
-                <div>
+                {/*  <div>
                     <button>Save</button>
-                </div>
+                </div> */}
             </div>
         )
     }
 };
+
+
+
 
 export default ProfileStatus;
