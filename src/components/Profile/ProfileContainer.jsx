@@ -8,14 +8,16 @@ import { compose } from "redux";
 
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
-    status: state.profilePage.status
+    status: state.profilePage.status,
+    isAuth: state.auth.isAuth,
+    logged: state.auth.id
 });
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
         let userId = this.props.router.params.userId;
         if (!userId) {
-            userId = 27245;
+            userId = this.props.logged;
         }
         this.props.getProfile(userId);
         this.props.getStatus(userId);

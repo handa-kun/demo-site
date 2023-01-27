@@ -7,9 +7,9 @@ const Header = (props) => {
             <img src='https://static.vecteezy.com/system/resources/previews/001/200/107/original/book-png.png' alt='logo' />
 
             <div className={classes.login_block}>
-                {props.isAuth ? props.login :
-                    <NavLink to='/login'>Login</NavLink>}
-                <button onClick={props.logout}>Logout</button>
+                {props.isAuth
+                    ? <div>{props.login} - <button onClick={props.logout}>Log out</button></div>
+                    : <NavLink to='/login'>Login</NavLink>}
             </div>
         </header>
     )
