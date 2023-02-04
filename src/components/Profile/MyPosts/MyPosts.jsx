@@ -7,7 +7,7 @@ import { Element } from '../../common/FormsControl/FormsControl';
 
 
 
-const MyPosts = (props) => {
+const MyPosts = React.memo(props => {
   let postsElements = props.posts.map(p => <Post message={p.text} counter={p.counter} />);
 
   let addPost = (values) => {
@@ -27,7 +27,7 @@ const MyPosts = (props) => {
       </div>
     </div>
   )
-};
+});
 
 const Textarea = Element('textarea');
 
