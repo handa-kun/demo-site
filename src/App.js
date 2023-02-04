@@ -19,7 +19,7 @@ import Preloader from './components/common/Preloader';
 class App extends Component {
   componentDidMount() {
     this.props.initializeApp();
-  }
+  };
 
   render() {
     if (!this.props.initialized) {
@@ -47,8 +47,8 @@ class App extends Component {
         </div>
       </BrowserRouter>
     );
-  }
-}
+  };
+};
 
 const mapStateToProps = (state) => ({
   initialized: state.app.initialized

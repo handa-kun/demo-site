@@ -7,9 +7,9 @@ import { connect } from 'react-redux';
 import { login } from '../../Redux/authReducer';
 import { Navigate } from 'react-router-dom';
 
-const LoginForm = (props) => {
+const LoginForm = ({ handleSubmit, error }) => {
     return (
-        <form className={styles.form} onSubmit={props.handleSubmit}>
+        <form className={styles.form} onSubmit={handleSubmit}>
             <div>
                 <Field placeholder={'Enter your email'}
                     name={'email'}
@@ -26,8 +26,8 @@ const LoginForm = (props) => {
             <div>
                 <Field type={'checkbox'} name={'rememberMe'} component={Input} /> Remember me
             </div>
-            {props.error && <div className={s.commonError}>
-                {props.error}
+            {error && <div className={s.commonError}>
+                {error}
             </div>}
             <div>
                 <button>Send</button>
