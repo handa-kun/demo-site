@@ -7,8 +7,6 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UserContainer from './components/User/UserContainer';
-//import ProfileContainer from './components/Profile/ProfileContainer';
-//import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
 import React, { Component, Suspense } from 'react';
 import { connect, Provider } from 'react-redux';
