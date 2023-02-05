@@ -1,4 +1,4 @@
-import loader from "../../images/loader.gif";
+import loader from "../../../images/loader.gif";
 
 const Preloader = (props) => {
     return <div>

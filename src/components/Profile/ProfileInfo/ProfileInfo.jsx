@@ -1,4 +1,4 @@
-import Preloader from '../../common/Preloader';
+import Preloader from '../../common/Preloader/Preloader';
 import styles from './ProfileInfo.module.css'
 //import ProfileStatus from '../ProfileStatus/ProfileStatus'
 import ProfileStatusHook from '../ProfileStatus/ProfileStatusHook';
