@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/handa-kun/demo-site/static/css/main.373566c1.css",
+    "main.js": "/handa-kun/demo-site/static/js/main.524a6199.js",
+    "static/css/148.dd1890f6.chunk.css": "/handa-kun/demo-site/static/css/148.dd1890f6.chunk.css",
+    "static/js/148.09ec5814.chunk.js": "/handa-kun/demo-site/static/js/148.09ec5814.chunk.js",
+    "static/css/550.004e6c19.chunk.css": "/handa-kun/demo-site/static/css/550.004e6c19.chunk.css",
+    "static/js/550.a289e3eb.chunk.js": "/handa-kun/demo-site/static/js/550.a289e3eb.chunk.js",
+    "static/js/787.9d2c693c.chunk.js": "/handa-kun/demo-site/static/js/787.9d2c693c.chunk.js",
+    "static/media/loader.gif": "/handa-kun/demo-site/static/media/loader.1f2e729a464564c55a15.gif",
+    "index.html": "/handa-kun/demo-site/index.html",
+    "main.373566c1.css.map": "/handa-kun/demo-site/static/css/main.373566c1.css.map",
+    "main.524a6199.js.map": "/handa-kun/demo-site/static/js/main.524a6199.js.map",
+    "148.dd1890f6.chunk.css.map": "/handa-kun/demo-site/static/css/148.dd1890f6.chunk.css.map",
+    "148.09ec5814.chunk.js.map": "/handa-kun/demo-site/static/js/148.09ec5814.chunk.js.map",
+    "550.004e6c19.chunk.css.map": "/handa-kun/demo-site/static/css/550.004e6c19.chunk.css.map",
+    "550.a289e3eb.chunk.js.map": "/handa-kun/demo-site/static/js/550.a289e3eb.chunk.js.map",
+    "787.9d2c693c.chunk.js.map": "/handa-kun/demo-site/static/js/787.9d2c693c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.373566c1.css",
+    "static/js/main.524a6199.js"
+  ]
+}
