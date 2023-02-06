@@ -2,7 +2,7 @@
   "name": "lesson1",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/handa-kun/demo-site",
+  "homepage": "https://handa-kun.github.io/demo-site",
   "dependencies": {
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
