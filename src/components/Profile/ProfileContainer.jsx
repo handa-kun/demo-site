@@ -19,9 +19,11 @@ class ProfileContainer extends React.Component {
         if (!userId) {
             userId = this.props.logged;
         }
+
         this.props.getProfile(userId);
         this.props.getStatus(userId);
-    }
+    };
+
     render() {
         return (
             <Profile {...this.props}
@@ -30,8 +32,9 @@ class ProfileContainer extends React.Component {
                 updateStatus={this.props.updateStatus}
                 savePhoto={this.props.savePhoto} />
         )
-    }
+    };
 };
+
 export default compose(
     connect(mapStateToProps, { getProfile, getStatus, updateStatus, savePhoto }),
     withRouter,

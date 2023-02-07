@@ -33,11 +33,11 @@ export const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 status: action.status
-            }
+            };
         case SET_USERS_PROFILE:
-            return { ...state, profile: action.profile }
+            return { ...state, profile: action.profile };
         case SAVE_PHOTOS:
-            return { ...state, profile: { ...state.profile.photos, photos: action.photos } }
+            return { ...state, profile: { ...state.profile.photos, photos: action.photos } };
         default:
             return state;
     }
