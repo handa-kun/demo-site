@@ -5,7 +5,7 @@ import ProfileStatusHook from '../ProfileStatus/ProfileStatusHook';
 import { useState } from 'react';
 import { ProfileDataReduxForm } from './ProfileDataForm';
 
-const ProfileInfo = ({ status, updateStatus, profile, savePhoto }) => {
+const ProfileInfo = ({ status, updateStatus, profile, savePhoto, saveProfile }) => {
     const [editMode, setEditMode] = useState(false);
 
     if (!profile) {
@@ -18,6 +18,10 @@ const ProfileInfo = ({ status, updateStatus, profile, savePhoto }) => {
         };
     };
 
+    const onSubmit = (formData) => {
+        saveProfile(formData);
+    };
+
     return (
         <div>
             <div className={styles.header_content}>
@@ -27,7 +31,7 @@ const ProfileInfo = ({ status, updateStatus, profile, savePhoto }) => {
                 <img src={profile.photos.large || Photo} className={styles.userPhoto} alt="logo" />
                 <input type="file" onChange={selectedPhoto} />
                 {editMode
-                    ? <ProfileDataReduxForm profile={profile} />
+                    ? <ProfileDataReduxForm initialValues={profile} onSubmit={onSubmit} profile={profile} />
                     : <ProfileData profile={profile} goToEditMode={() => { setEditMode(true) }} />}
                 <ProfileStatusHook status={status} updateStatus={updateStatus} />
             </div>
@@ -48,7 +52,7 @@ const ProfileData = ({ profile, goToEditMode }) => {
                 <span>About me:</span> {profile.aboutMe}
             </div>
             <div>
-                <span>Job:</span> {profile.lookingForAJobDescription}
+                <span>My professional skills:</span> {profile.lookingForAJobDescription}
             </div>
         </div>
     )

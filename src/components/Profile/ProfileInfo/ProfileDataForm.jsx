@@ -1,11 +1,11 @@
 import { reduxForm } from 'redux-form';
 import { createField, Element } from '../../common/FormsControl/FormsControl';
 
-const ProfileDataForm = ({ profile }) => {
+const ProfileDataForm = ({ handleSubmit }) => {
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div>
-                <button onClick={() => { }}>Save</button>
+                <button>Save</button>
             </div>
             <div>
                 <span>Full name:</span> {createField('Full name', 'fullName', Input, [])}
@@ -14,7 +14,7 @@ const ProfileDataForm = ({ profile }) => {
                 <span>About me:</span> {createField('About Me', 'aboutMe', Input, [])}
             </div>
             <div>
-                <span>Job:</span> {createField('Job', 'aboutMe', Input, [])}
+                <span>My professional skills:</span> {createField('', 'lookingForAJobDescription', Input, [])}
             </div>
         </form>
     )
