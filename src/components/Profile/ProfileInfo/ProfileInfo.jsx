@@ -1,12 +1,18 @@
 import Preloader from '../../common/Preloader/Preloader';
 import styles from './ProfileInfo.module.css'
-//import ProfileStatus from '../ProfileStatus/ProfileStatus'
+import Photo from '../../../images/user.png'
 import ProfileStatusHook from '../ProfileStatus/ProfileStatusHook';
 
-const ProfileInfo = (props) => {
-    if (!props.profile) {
+const ProfileInfo = ({ status, updateStatus, profile, savePhoto }) => {
+    if (!profile) {
         return <Preloader />
     }
+
+    const selectedPhoto = (e) => {
+        if (e.target.files.length) {
+            savePhoto(e.target.files[0]);
+        };
+    };
 
     return (
         <div>
@@ -14,17 +20,18 @@ const ProfileInfo = (props) => {
                 <img src='https://www.freepnglogos.com/uploads/book-png/library-archive-books-png-transparent-14.png' alt='logo' />
             </div>
             <div>
-                <img src={props.profile.photos.large} alt="logo" />
+                <img src={profile.photos.large || Photo} className={styles.userPhoto} alt="logo" />
+                <input type="file" onChange={selectedPhoto} />
                 <div>
-                    <span>{props.profile.fullName}</span>
+                    <span>{profile.fullName}</span>
                 </div>
                 <div>
-                    <span>{props.profile.aboutMe}</span>
+                    <span>{profile.aboutMe}</span>
                 </div>
                 <div>
-                    <span>{props.profile.lookingForAJobDescription}</span>
+                    <span>{profile.lookingForAJobDescription}</span>
                 </div>
-                <ProfileStatusHook status={props.status} updateStatus={props.updateStatus} />
+                <ProfileStatusHook status={status} updateStatus={updateStatus} />
             </div>
         </div>
     )
