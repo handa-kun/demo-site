@@ -76,7 +76,7 @@ export const savePhoto = (file) => async (dispatch) => {
 };
 
 export const saveProfile = (profile) => async (dispatch, getState) => {
-    const userId = getState().auth.userId;
+    const userId = getState().auth.id;
     let response = await profileAPI.saveProfile(profile);
 
     if (response.data.resultCode === 0) {

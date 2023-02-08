@@ -20,6 +20,7 @@ const ProfileInfo = ({ status, updateStatus, profile, savePhoto, saveProfile }) 
 
     const onSubmit = (formData) => {
         saveProfile(formData);
+        setEditMode(false);
     };
 
     return (
@@ -31,14 +32,13 @@ const ProfileInfo = ({ status, updateStatus, profile, savePhoto, saveProfile }) 
                 <img src={profile.photos.large || Photo} className={styles.userPhoto} alt="logo" />
                 <input type="file" onChange={selectedPhoto} />
                 {editMode
-                    ? <ProfileDataReduxForm initialValues={profile} onSubmit={onSubmit} profile={profile} />
+                    ? <ProfileDataReduxForm initialValues={profile} onSubmit={onSubmit} />
                     : <ProfileData profile={profile} goToEditMode={() => { setEditMode(true) }} />}
                 <ProfileStatusHook status={status} updateStatus={updateStatus} />
             </div>
         </div>
     )
 };
-
 const ProfileData = ({ profile, goToEditMode }) => {
     return (
         <div>
@@ -49,10 +49,10 @@ const ProfileData = ({ profile, goToEditMode }) => {
                 <span>Full name:</span> {profile.fullName}
             </div>
             <div>
-                <span>About me:</span> {profile.aboutMe}
+                <span>My professional skills:</span> {profile.lookingForAJobDescription}
             </div>
             <div>
-                <span>My professional skills:</span> {profile.lookingForAJobDescription}
+                <span>About me:</span> {profile.aboutMe}
             </div>
         </div>
     )
