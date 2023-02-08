@@ -13,7 +13,7 @@ let mapStateToProps = (state) => ({
     logged: state.auth.id,
 });
 
-const ProfileContainerHook = (props) => {
+const ProfileContainerHook = ({ profile, status, updateStatus, ...props }) => {
 
     let { userId } = useParams();
     if (!userId) {
@@ -25,7 +25,7 @@ const ProfileContainerHook = (props) => {
     });
 
     return (
-        <Profile profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
+        <Profile profile={profile} status={status} updateStatus={updateStatus} />
     )
 };
 
