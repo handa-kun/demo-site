@@ -1,6 +1,9 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+
+    border: 3px solid rgb(12, 3, 3);
+    background-color: rgb(214, 188, 38);
 }
 
 .dialog {
@@ -16,8 +19,8 @@
     margin: 5px;
     height: 15px;
 
-    border: 2px solid rgb(161, 55, 161);
-    border-radius: 5rem;
+    border: 3px solid rgb(12, 3, 3);
+    background-color: rgb(214, 188, 38);
 
     display: flex;
     justify-content: space-between;
@@ -48,5 +51,3 @@
 .message {
     display: flex;
 }
-
-

@@ -24,10 +24,7 @@ const ProfileInfo = ({ status, updateStatus, profile, savePhoto, saveProfile }) 
     };
 
     return (
-        <div>
-            <div className={styles.header_content}>
-                <img src='https://www.freepnglogos.com/uploads/book-png/library-archive-books-png-transparent-14.png' alt='logo' />
-            </div>
+        <div className={styles.header_content}>
             <div>
                 <img src={profile.photos.large || Photo} className={styles.userPhoto} alt="logo" />
                 <input type="file" onChange={selectedPhoto} />
