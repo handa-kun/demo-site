@@ -11,8 +11,6 @@
   grid-template-areas:
     'h h'
     'n c';
-
-  color: rgb(5, 19, 48);
 }
 
 .app-wrapper-content {

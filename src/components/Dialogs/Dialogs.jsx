@@ -31,9 +31,6 @@ const Dialogs = (props) => {
                 {messagesElements}
             </div>
             <div className={classes.container_message}>
-                <div>
-                    <img src="" alt="logo" />
-                </div>
                 <div className={classes.message}>
                     <AddMessageFormRedux onSubmit={addNewMessage} />
                 </div>
